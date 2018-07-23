@@ -86,7 +86,7 @@ html
           h3.central__title Главное
           .central__wrapper
             .central__info
-              .central__title Привет, Геннадий!
+              .central__greeting Привет, Геннадий!
               .central__text Двери и окна закрыты, сигнализация включена.
               .central__temputure
                 .central__temputure_item
@@ -96,20 +96,26 @@ html
                   .central__temputure_title За окном
                   .central__temputure_value +19
                   img.central__temputure_img(src='./images/cloud-off.png')
-            .central__list
-              each item in centralList
-                .central__item
-                  img.central__img(src= item.src, alt= item.alt)
-                  p.central__text= item.text
-                  span.central__footnote= item.footnote
+            .functions
+              .functions__list
+                each item in centralList
+                  .functions__item
+                    .functions__img_area
+                      img.functions__img(src= item.src, alt= item.alt)
+                    .functions__text_area
+                      p.functions__text= item.text
+                      span.functions__footnote= item.footnote
         .scenarios
           h3.scenarios__title Избранные сценарии
-          .scenarios__list
-            each item in scenarios
-              .scenarios__item
-                img.scenarios__img(src= item.src, alt= item.alt)
-                p.scenarios__text= item.text
-                span.scenarios__footnote= item.footnote
+          .functions
+            .functions__list
+              each item in scenarios
+                .functions__item
+                  .functions__img_area
+                    img.functions__img(src= item.src, alt= item.alt)
+                  .functions__text_area
+                    p.functions__text= item.text
+                    span.functions__footnote= item.footnote
       .devices
         .filter
           .filter__title Избранные устройства
@@ -119,12 +125,15 @@ html
             .filter__item Зал
             .filter__item Лампочки
             .filter__item Камеры
-        .devices__list
-          each item in devicesList
-            .devices__item
-              img.devices__img(src= item.src, alt= item.alt)
-              p.devices__text= item.text
-              span.devices__footnote= item.footnote
+        .functions
+          .functions__list
+            each item in devicesList
+              .functions__item
+                .functions__img_area
+                  img.functions__img(src= item.src, alt= item.alt)
+                .functions__text_area
+                  p.functions__text= item.text
+                  span.functions__footnote= item.footnote
     footer.footer
       .bottom-menu
         .bottom-menu__item
