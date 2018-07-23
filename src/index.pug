@@ -1,0 +1,136 @@
+-
+  var scenarios = [{
+    src: './images/sun.png',
+    alt: 'sun',
+    text: 'Выключить весь свет в доме и во дворе'
+  }, {
+    src: './images/clock-off.png',
+    alt: 'clock',
+    text: 'Я ухожу'
+  }, {
+    src: './images/sun.png',
+    alt: 'sun',
+    text: 'Включить свет \u2028в коридоре'
+  }, {
+    src: './images/temperature.png',
+    alt: 'temperature',
+    text: 'Набрать горячую ванну',
+    footnote: 'Начнётся в 18:00'
+  }, {
+    src: './images/temperature.png',
+    alt: 'temperature',
+    text: 'Сделать пол тёплым во всей квартире'
+  }];
+  var centralList = [{
+    src: './images/temperature-off.png',
+    alt: 'temperature',
+    text: 'Philips Cooler',
+    footnote: 'Начнет охлаждать в 16:30'
+  }, {
+    src: './images/sun-off.png',
+    alt: 'sun',
+    text: 'Xiaomi Yeelight LED Smart Bulb',
+    footnote: 'Включится в 17:00'
+  }];
+  var devicesList = [{
+    src: './images/sun.png',
+    alt: 'sun',
+    text: 'Xiaomi Yeelight LED Smart Bulb',
+    footnote: 'Включено'
+  }, {
+    src: './images/sun-off.png',
+    alt: 'sun',
+    text: 'D-Link Omna 180 Cam',
+    footnote: 'Включится в 17:00'
+  }, {
+    src: './images/temperature-off.png',
+    alt: 'temperature',
+    text: 'Elgato Eve Degree Connected',
+    footnote: 'Выключено до 17:00'
+  }, {
+    src: './images/sun-off.png',
+    alt: 'sun',
+    text: 'LIFX Mini Day & Dusk A60 E27',
+    footnote: 'Включится в 17:00'
+  }, {
+    src: './images/sun.png',
+    alt: 'sun',
+    text: 'Xiaomi Mi Air Purifier 2S',
+    footnote: 'Включено'
+  }, {
+    src: './images/sun.png',
+    alt: 'sun',
+    text: 'Xiaomi Mi Air Purifier 2S',
+    footnote: 'Включено'
+  }, {
+
+  }];
+doctype html
+html
+  head
+    title Yandex task 2
+  body
+    header.header
+      a.logo(href='#')
+        img.logo__img(src='./images/yandex.png' alt='logo')
+      .top-menu
+        .top-menu__item.top-menu__item-active
+          a.top-menu__link(href='#') Сводка
+        .top-menu__item
+          a.top-menu__link(href='#') Устройства
+        .top-menu__item
+          a.top-menu__link(href='#') Сценарии
+    .content
+      .main
+        .central
+          h3.central__title Главное
+          .central__wrapper
+            .central__info
+              .central__title Привет, Геннадий!
+              .central__text Двери и окна закрыты, сигнализация включена.
+              .central__temputure
+                .central__temputure_item
+                  .central__temputure_title Дома
+                  .central__temputure_value +23
+                .central__temputure_item
+                  .central__temputure_title За окном
+                  .central__temputure_value +19
+                  img.central__temputure_img(src='./images/cloud-off.png')
+            .central__list
+              each item in centralList
+                .central__item
+                  img.central__img(src= item.src, alt= item.alt)
+                  p.central__text= item.text
+                  span.central__footnote= item.footnote
+        .scenarios
+          h3.scenarios__title Избранные сценарии
+          .scenarios__list
+            each item in scenarios
+              .scenarios__item
+                img.scenarios__img(src= item.src, alt= item.alt)
+                p.scenarios__text= item.text
+                span.scenarios__footnote= item.footnote
+      .devices
+        .filter
+          .filter__title Избранные устройства
+          .filter__list
+            .filter__item.filter__item-active Все
+            .filter__item Кухня
+            .filter__item Зал
+            .filter__item Лампочки
+            .filter__item Камеры
+        .devices__list
+          each item in devicesList
+            .devices__item
+              img.devices__img(src= item.src, alt= item.alt)
+              p.devices__text= item.text
+              span.devices__footnote= item.footnote
+    footer.footer
+      .bottom-menu
+        .bottom-menu__item
+          a.bottom-menu__link(src="#") Помощь
+          a.bottom-menu__link(src="#") Обратная связь
+          a.bottom-menu__link(src="#") Разработчикам
+          a.bottom-menu__link(src="#") Условия использования
+      .copyright © 2001–2017  ООО «Яндекс»
+
